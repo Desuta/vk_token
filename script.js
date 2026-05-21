@@ -71,6 +71,10 @@ submit.onclick = function() {
             groups = 1;
     }
     let app = app_id.value;
+    if (app != 6463690) {
+        alert('Используйте приложение Маруся для получения токена для сообщества(id приложения 6463690)');
+        return
+    }
     let group = group_id.value;
     if ((app && !groups) || (app && groups && group && scope.length)) {
         auth(app, Array.prototype.slice.call(scope).reduce((cc, sc) => cc + Math.pow(2, sc.getAttribute('scope')), 0), (groups ? group : ''));
